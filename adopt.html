@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>待领养动物 - 流浪动物救助中心</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🐾</span>
+                <span>流浪动物救助中心</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="adopt.html" class="active">待领养</a></li>
+                <li><a href="stories.html">救助故事</a></li>
+                <li><a href="volunteer.html">志愿者</a></li>
+                <li><a href="donate.html">捐款捐物</a></li>
+                <li><a href="rescue.html">紧急救助</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <section class="hero" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+        <h1>🏠 等待回家的毛孩子</h1>
+        <p>给它们一个家，它们会给你全部的爱</p>
+    </section>
+
+    <!-- 筛选区域 -->
+    <div class="container">
+        <div style="background: white; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+            <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center;">
+                <span style="font-weight: bold;">筛选：</span>
+                <select style="padding: 10px 15px; border: 2px solid #e0e0e0; border-radius: 8px;">
+                    <option>全部类型</option>
+                    <option>🐱 猫咪</option>
+                    <option>🐶 狗狗</option>
+                    <option>🐰 其他</option>
+                </select>
+                <select style="padding: 10px 15px; border: 2px solid #e0e0e0; border-radius: 8px;">
+                    <option>全部年龄</option>
+                    <option>幼崽 (0-6个月)</option>
+                    <option>青年 (6个月-2岁)</option>
+                    <option>成年 (2-7岁)</option>
+                    <option>老年 (7岁以上)</option>
+                </select>
+                <select style="padding: 10px 15px; border: 2px solid #e0e0e0; border-radius: 8px;">
+                    <option>全部状态</option>
+                    <option>可领养</option>
+                    <option>急需领养</option>
+                    <option>治疗中</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- 动物卡片 -->
+        <div class="card-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=400" alt="小橘" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">小橘 🐱 | 3个月 | 公</h3>
+                    <p class="card-text">活泼好动的小橘猫，喜欢玩逗猫棒，已经学会用猫砂盆。已驱虫，第一针疫苗已打。</p>
+                    <div>
+                        <span class="card-tag tag-urgent">急需领养</span>
+                        <span class="card-tag tag-normal">已驱虫</span>
+                        <span class="card-tag tag-normal">疫苗中</span>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 15px;" onclick="openAdoptModal('小橘')">申请领养</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400" alt="豆豆" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">豆豆 🐶 | 1岁 | 母</h3>
+                    <p class="card-text">温顺的中华田园犬，会握手、坐下等简单指令。已绝育，性格温顺，适合有小孩的家庭。</p>
+                    <div>
+                        <span class="card-tag tag-normal">可领养</span>
+                        <span class="card-tag tag-success">已绝育</span>
+                        <span class="card-tag tag-success">疫苗齐全</span>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 15px;" onclick="openAdoptModal('豆豆')">申请领养</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400" alt="咪咪" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">咪咪 🐱 | 2岁 | 母</h3>
+                    <p class="card-text">安静的蓝猫妹妹，喜欢被摸头，不太爱叫。适合安静家庭，不适合有吵闹小孩的家庭。</p>
+                    <div>
+                        <span class="card-tag tag-normal">可领养</span>
+                        <span class="card-tag tag-success">已绝育</span>
+                        <span class="card-tag tag-success">疫苗齐全</span>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 15px;" onclick="openAdoptModal('咪咪')">申请领养</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=400" alt="球球" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">球球 🐶 | 5个月 | 公</h3>
+                    <p class="card-text">可爱的比熊串串，毛茸茸的很讨喜。精力旺盛，需要每天遛弯。已驱虫，疫苗进行中。</p>
+                    <div>
+                        <span class="card-tag tag-urgent">急需领养</span>
+                        <span class="card-tag tag-normal">已驱虫</span>
+                        <span class="card-tag tag-normal">疫苗中</span>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 15px;" onclick="openAdoptModal('球球')">申请领养</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1573865526739-10659fec78dc?w=400" alt="小黑" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">小黑 🐱 | 4岁 | 公</h3>
+                    <p class="card-text">稳重的黑猫大哥，曾经流浪过，现在很珍惜温暖的家。适合有经验的主人。</p>
+                    <div>
+                        <span class="card-tag tag-normal">可领养</span>
+                        <span class="card-tag tag-success">已绝育</span>
+                        <span class="card-tag tag-success">疫苗齐全</span>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 15px;" onclick="openAdoptModal('小黑')">申请领养</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=400" alt="乐乐" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">乐乐 🐶 | 3岁 | 母</h3>
+                    <p class="card-text">金毛混血，性格超级好，对人对狗都很友好。需要较大活动空间。</p>
+                    <div>
+                        <span class="card-tag tag-normal">可领养</span>
+                        <span class="card-tag tag-success">已绝育</span>
+                        <span class="card-tag tag-success">疫苗齐全</span>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 15px;" onclick="openAdoptModal('乐乐')">申请领养</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 领养申请弹窗 -->
+    <div id="adoptModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeAdoptModal()">&times;</span>
+            <h2 style="margin-bottom: 20px; color: #333;">📝 领养申请</h2>
+            <p id="adoptAnimalName" style="color: #ff6b6b; font-weight: bold; margin-bottom: 20px;"></p>
+            <form onsubmit="submitAdopt(event)">
+                <div class="form-group">
+                    <label>您的姓名</label>
+                    <input type="text" required placeholder="请输入姓名">
+                </div>
+                <div class="form-group">
+                    <label>联系电话</label>
+                    <input type="tel" required placeholder="请输入手机号">
+                </div>
+                <div class="form-group">
+                    <label>居住情况</label>
+                    <select required>
+                        <option value="">请选择</option>
+                        <option>自有住房</option>
+                        <option>租房（房东同意）</option>
+                        <option>宿舍</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>养宠经验</label>
+                    <select required>
+                        <option value="">请选择</option>
+                        <option>第一次养宠</option>
+                        <option>有养宠经验</option>
+                        <option>正在养宠</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>申请理由</label>
+                    <textarea required placeholder="请说明您想领养的原因..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">提交申请</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🐾 流浪动物救助中心</h3>
+                <p>致力于流浪动物救助、领养推广、公益宣传</p>
+            </div>
+            <div class="footer-section">
+                <h3>联系我们</h3>
+                <p>📞 电话：400-XXX-XXXX</p>
+                <p>📧 邮箱：help@animalrescue.org</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 流浪动物救助中心</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
