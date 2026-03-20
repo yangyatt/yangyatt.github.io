@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>紧急救助 - 流浪动物救助中心</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🐾</span>
+                <span>流浪动物救助中心</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="adopt.html">待领养</a></li>
+                <li><a href="stories.html">救助故事</a></li>
+                <li><a href="volunteer.html">志愿者</a></li>
+                <li><a href="donate.html">捐款捐物</a></li>
+                <li><a href="rescue.html" class="active">紧急救助</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <section class="rescue-banner" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 60px 20px; text-align: center;">
+        <h1 style="font-size: 42px; margin-bottom: 15px;">🚨 紧急救助</h1>
+        <p style="font-size: 18px; opacity: 0.9;">发现受伤/受困流浪动物？立即下单，附近志愿者快速响应！</p>
+    </section>
+
+    <!-- 主要内容 -->
+    <div class="container">
+        <!-- 两个入口 -->
+        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+            <!-- 求助入口 -->
+            <div class="card" style="padding: 40px; text-align: center; border: 3px solid #f5576c;">
+                <div style="font-size: 80px; margin-bottom: 20px;">🆘</div>
+                <h2 style="color: #f5576c; margin-bottom: 15px;">我需要救助</h2>
+                <p style="color: #666; margin-bottom: 25px; line-height: 1.8;">
+                    发现受伤、受困、需要帮助的流浪动物<br>
+                    一键下单，附近志愿者司机将快速前往
+                </p>
+                <button class="btn btn-primary btn-large" onclick="showRescueForm()">立即发起救助</button>
+            </div>
+
+            <!-- 司机入驻入口 -->
+            <div class="card" style="padding: 40px; text-align: center; border: 3px solid #56ab2f;">
+                <div style="font-size: 80px; margin-bottom: 20px;">🚗</div>
+                <h2 style="color: #56ab2f; margin-bottom: 15px;">我是司机</h2>
+                <p style="color: #666; margin-bottom: 25px; line-height: 1.8;">
+                    有車、有时间、有爱心<br>
+                    入驻成为救援司机，帮助更多毛孩子
+                </p>
+                <button class="btn btn-primary btn-large" style="background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);" onclick="showDriverForm()">申请入驻</button>
+            </div>
+        </div>
+
+        <!-- 救助流程 -->
+        <div class="section-title" style="margin-top: 60px;">
+            <h2>📋 救助流程</h2>
+            <p>简单3步，快速救助</p>
+        </div>
+
+        <div class="rescue-steps" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;">
+            <div class="step-card" style="background: white; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <div class="step-number" style="background: #f5576c; color: white; width: 60px; height: 60px; font-size: 28px; margin: 0 auto 20px;">1</div>
+                <h3 style="margin-bottom: 10px;">发现动物</h3>
+                <p style="color: #666;">发现受伤、受困、需要帮助的流浪动物，确保自身安全</p>
+            </div>
+            <div class="step-card" style="background: white; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <div class="step-number" style="background: #f5576c; color: white; width: 60px; height: 60px; font-size: 28px; margin: 0 auto 20px;">2</div>
+                <h3 style="margin-bottom: 10px;">下单求助</h3>
+                <p style="color: #666;">填写求助信息，包括位置、动物状况、联系方式</p>
+            </div>
+            <div class="step-card" style="background: white; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <div class="step-number" style="background: #f5576c; color: white; width: 60px; height: 60px; font-size: 28px; margin: 0 auto 20px;">3</div>
+                <h3 style="margin-bottom: 10px;">等待救援</h3>
+                <p style="color: #666;">附近志愿者司机接单后前往现场，运送至医院或基地</p>
+            </div>
+        </div>
+
+        <!-- 救助求助表单（默认隐藏） -->
+        <div id="rescueForm" style="display: none; max-width: 600px; margin: 40px auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            <h2 style="color: #333; margin-bottom: 20px; text-align: center;">🆘 救助求助单</h2>
+            <form onsubmit="submitRescue(event)">
+                <div class="form-group">
+                    <label>求助人姓名 *</label>
+                    <input type="text" required placeholder="请输入您的姓名">
+                </div>
+                <div class="form-group">
+                    <label>联系电话 *</label>
+                    <input type="tel" required placeholder="请输入手机号">
+                </div>
+                <div class="form-group">
+                    <label>救助地点 *</label>
+                    <input type="text" required placeholder="详细地址，例如：XX路XX号附近">
+                </div>
+                <div class="form-group">
+                    <label>动物类型</label>
+                    <select>
+                        <option>🐱 猫</option>
+                        <option>🐶 狗</option>
+                        <option>其他</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>动物状况 *</label>
+                    <textarea required placeholder="请描述动物的状况：是否受伤、受困位置、精神状态等"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>现场照片</label>
+                    <input type="file" accept="image/*" multiple>
+                    <p style="color: #999; font-size: 14px; margin-top: 5px;">可上传多张照片，帮助志愿者了解情况</p>
+                </div>
+                <div class="form-group">
+                    <label>紧急程度 *</label>
+                    <select required>
+                        <option value="normal">一般 - 动物状态稳定</option>
+                        <option value="urgent">紧急 - 动物受伤/状态不佳</option>
+                        <option value="critical">危急 - 动物生命垂危</option>
+                    </select>
+                </div>
+                <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                    <p style="color: #856404; font-size: 14px;">
+                        ⚠️ 提交后，附近志愿者将尽快联系您。危急情况请直接拨打110或联系当地动物保护组织。
+                    </p>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 18px;">提交求助</button>
+            </form>
+        </div>
+
+        <!-- 司机入驻表单（默认隐藏） -->
+        <div id="driverForm" style="display: none; max-width: 600px; margin: 40px auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            <h2 style="color: #333; margin-bottom: 20px; text-align: center;">🚗 司机入驻申请</h2>
+            <form onsubmit="submitDriver(event)">
+                <div class="form-group">
+                    <label>姓名 *</label>
+                    <input type="text" required placeholder="请输入您的姓名">
+                </div>
+                <div class="form-group">
+                    <label>联系电话 *</label>
+                    <input type="tel" required placeholder="请输入手机号">
+                </div>
+                <div class="form-group">
+                    <label>微信号</label>
+                    <input type="text" placeholder="方便拉入志愿者群">
+                </div>
+                <div class="form-group">
+                    <label>所在城市 *</label>
+                    <input type="text" required placeholder="例如：北京市朝阳区">
+                </div>
+                <div class="form-group">
+                    <label>车辆类型</label>
+                    <select>
+                        <option>轿车</option>
+                        <option>SUV</option>
+                        <option>MPV/面包车</option>
+                        <option>其他</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>可服务时间</label>
+                    <select>
+                        <option>24小时待命</option>
+                        <option>工作日晚上</option>
+                        <option>周末全天</option>
+                        <option>仅紧急情况</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>救助经验</label>
+                    <textarea placeholder="请描述您的救助经历（选填）"></textarea>
+                </div>
+                <div style="background: #e8f5e9; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                    <p style="color: #2e7d32; font-size: 14px;">
+                        ✓ 司机享有基础油费补贴<br>
+                        ✓ 提供免费救助培训<br>
+                        ✓ 购买意外保险
+                    </p>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 18px; background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);">提交申请</button>
+            </form>
+        </div>
+
+        <!-- 活跃司机展示 -->
+        <div class="section-title" style="margin-top: 60px;">
+            <h2>🚗 活跃救援司机</h2>
+            <p>感谢这些爱心司机的付出</p>
+        </div>
+
+        <div class="card-grid">
+            <div class="card" style="padding: 25px; text-align: center;">
+                <div style="width: 80px; height: 80px; background: #f0f0f0; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 40px;">👨</div>
+                <h3 style="margin-bottom: 10px;">张师傅</h3>
+                <p style="color: #666; font-size: 14px;">📍 北京市朝阳区</p>
+                <p style="color: #666; font-size: 14px;">🚗 SUV | ⭐ 4.9</p>
+                <span class="card-tag tag-success" style="margin-top: 10px;">已救援 56 次</span>
+            </div>
+            <div class="card" style="padding: 25px; text-align: center;">
+                <div style="width: 80px; height: 80px; background: #f0f0f0; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 40px;">👩</div>
+                <h3 style="margin-bottom: 10px;">李姐</h3>
+                <p style="color: #666; font-size: 14px;">📍 北京市海淀区</p>
+                <p style="color: #666; font-size: 14px;">🚗 轿车 | ⭐ 5.0</p>
+                <span class="card-tag tag-success" style="margin-top: 10px;">已救援 89 次</span>
+            </div>
+            <div class="card" style="padding: 25px; text-align: center;">
+                <div style="width: 80px; height: 80px; background: #f0f0f0; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 40px;">👨</div>
+                <h3 style="margin-bottom: 10px;">王哥</h3>
+                <p style="color: #666; font-size: 14px;">📍 北京市昌平区</p>
+                <p style="color: #666; font-size: 14px;">🚗 MPV | ⭐ 4.8</p>
+                <span class="card-tag tag-success" style="margin-top: 10px;">已救援 34 次</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🐾 流浪动物救助中心</h3>
+                <p>致力于流浪动物救助、领养推广、公益宣传</p>
+            </div>
+            <div class="footer-section">
+                <h3>联系我们</h3>
+                <p>📞 电话：400-XXX-XXXX</p>
+                <p>📧 邮箱：help@animalrescue.org</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 流浪动物救助中心</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
