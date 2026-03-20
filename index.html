@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>流浪动物救助中心 - 让爱不再流浪</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🐾</span>
+                <span>流浪动物救助中心</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">首页</a></li>
+                <li><a href="adopt.html">待领养</a></li>
+                <li><a href="stories.html">救助故事</a></li>
+                <li><a href="volunteer.html">志愿者</a></li>
+                <li><a href="donate.html">捐款捐物</a></li>
+                <li><a href="rescue.html">紧急救助</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 首页横幅 -->
+    <section class="hero">
+        <h1>🐶 让爱不再流浪 🐱</h1>
+        <p>每一个生命都值得被温柔以待。加入我们，一起为流浪动物撑起一片温暖的天空。</p>
+        <a href="adopt.html" class="hero-btn">查看待领养动物</a>
+    </section>
+
+    <!-- 主要内容 -->
+    <div class="container">
+        <!-- 数据统计 -->
+        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div class="card" style="text-align: center; padding: 30px;">
+                <div style="font-size: 48px; margin-bottom: 10px;">🏠</div>
+                <div style="font-size: 32px; font-weight: bold; color: #ff6b6b;">520+</div>
+                <div style="color: #666;">已成功领养</div>
+            </div>
+            <div class="card" style="text-align: center; padding: 30px;">
+                <div style="font-size: 48px; margin-bottom: 10px;">❤️</div>
+                <div style="font-size: 32px; font-weight: bold; color: #ff6b6b;">1,280+</div>
+                <div style="color: #666;">累计救助动物</div>
+            </div>
+            <div class="card" style="text-align: center; padding: 30px;">
+                <div style="font-size: 48px; margin-bottom: 10px;">👥</div>
+                <div style="font-size: 32px; font-weight: bold; color: #ff6b6b;">3,500+</div>
+                <div style="color: #666;">注册志愿者</div>
+            </div>
+            <div class="card" style="text-align: center; padding: 30px;">
+                <div style="font-size: 48px; margin-bottom: 10px;">🚑</div>
+                <div style="font-size: 32px; font-weight: bold; color: #ff6b6b;">890+</div>
+                <div style="color: #666;">紧急救助出车</div>
+            </div>
+        </div>
+
+        <!-- 待领养动物预览 -->
+        <div class="section-title">
+            <h2>🐾 等待回家的毛孩子</h2>
+            <p>它们正在等待一个温暖的家</p>
+        </div>
+        <div class="card-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=400" alt="小猫" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">小橘 - 3个月</h3>
+                    <p class="card-text">活泼可爱的小橘猫，已驱虫疫苗，寻找有爱心的铲屎官~</p>
+                    <span class="card-tag tag-urgent">急需领养</span>
+                    <a href="adopt.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 14px;">了解详情</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400" alt="小狗" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">豆豆 - 1岁</h3>
+                    <p class="card-text">温顺的中华田园犬，会握手，已绝育，适合家庭饲养。</p>
+                    <span class="card-tag tag-normal">可领养</span>
+                    <a href="adopt.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 14px;">了解详情</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400" alt="猫咪" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">咪咪 - 2岁</h3>
+                    <p class="card-text">安静的蓝猫妹妹，喜欢被摸头，寻找安静家庭的陪伴。</p>
+                    <span class="card-tag tag-normal">可领养</span>
+                    <a href="adopt.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 14px;">了解详情</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 紧急救助入口 -->
+        <div class="rescue-banner">
+            <h2>🚨 发现流浪动物需要紧急救助？</h2>
+            <p>一键下单，附近志愿者司机快速响应</p>
+            <div class="rescue-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div>发现受伤/受困动物</div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div>小程序下单求助</div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div>附近司机前往救助</div>
+                </div>
+            </div>
+            <a href="rescue.html" class="hero-btn" style="margin-top: 30px;">立即发起救助</a>
+        </div>
+
+        <!-- 最新动态 -->
+        <div class="section-title">
+            <h2>📰 最新救助动态</h2>
+            <p>记录每一个温暖的瞬间</p>
+        </div>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">【成功领养】小黑的幸福新生活</h3>
+                    <p class="card-text">经过3个月的等待，小黑终于找到了爱它的主人...</p>
+                    <span class="card-tag tag-success">2026-03-18</span>
+                    <a href="stories.html" class="btn btn-secondary" style="padding: 8px 20px; font-size: 14px;">阅读更多</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">【紧急救助】暴雨夜救援行动</h3>
+                    <p class="card-text">志愿者连夜出动，成功救出被困下水道的3只小猫...</p>
+                    <span class="card-tag tag-urgent">2026-03-15</span>
+                    <a href="stories.html" class="btn btn-secondary" style="padding: 8px 20px; font-size: 14px;">阅读更多</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">【志愿者招募】3月线下活动报名中</h3>
+                    <p class="card-text">本周六基地开放日，欢迎来和毛孩子们互动...</p>
+                    <span class="card-tag tag-normal">2026-03-12</span>
+                    <a href="volunteer.html" class="btn btn-secondary" style="padding: 8px 20px; font-size: 14px;">立即报名</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🐾 流浪动物救助中心</h3>
+                <p>致力于流浪动物救助、领养推广、公益宣传</p>
+                <p>让每一个生命都被温柔以待</p>
+            </div>
+            <div class="footer-section">
+                <h3>快速链接</h3>
+                <p><a href="adopt.html">待领养动物</a></p>
+                <p><a href="volunteer.html">成为志愿者</a></p>
+                <p><a href="donate.html">捐款捐物</a></p>
+                <p><a href="rescue.html">紧急救助</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>联系我们</h3>
+                <p>📍 地址：XX市XX区XX路XX号</p>
+                <p>📞 电话：400-XXX-XXXX</p>
+                <p>📧 邮箱：help@animalrescue.org</p>
+                <p>🕐 时间：9:00-18:00（全年无休）</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 流浪动物救助中心 - 用爱守护每一个生命</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
