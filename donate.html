@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>捐款捐物 - 流浪动物救助中心</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🐾</span>
+                <span>流浪动物救助中心</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="adopt.html">待领养</a></li>
+                <li><a href="stories.html">救助故事</a></li>
+                <li><a href="volunteer.html">志愿者</a></li>
+                <li><a href="donate.html" class="active">捐款捐物</a></li>
+                <li><a href="rescue.html">紧急救助</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <section class="hero" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+        <h1>💝 捐款捐物</h1>
+        <p>您的每一份支持，都是毛孩子们活下去的希望</p>
+    </section>
+
+    <!-- 主要内容 -->
+    <div class="container">
+        <!-- 捐款说明 -->
+        <div style="background: white; padding: 30px; border-radius: 15px; margin-bottom: 40px; text-align: center;">
+            <h2 style="color: #333; margin-bottom: 20px;">💰 资金捐赠</h2>
+            <p style="color: #666; max-width: 600px; margin: 0 auto 30px;">
+                救助站的运营需要持续的资金支持，包括动物医疗、粮食、场地租金等。
+                所有捐款将100%用于流浪动物救助，定期公示收支明细。
+            </p>
+
+            <!-- 捐款金额选择 -->
+            <div class="donate-options">
+                <div class="donate-option" onclick="selectAmount(50, this)">
+                    <div class="donate-amount">¥50</div>
+                    <div class="donate-desc">一只猫3天的粮食</div>
+                </div>
+                <div class="donate-option" onclick="selectAmount(100, this)">
+                    <div class="donate-amount">¥100</div>
+                    <div class="donate-desc">一次基础疫苗</div>
+                </div>
+                <div class="donate-option selected" onclick="selectAmount(200, this)">
+                    <div class="donate-amount">¥200</div>
+                    <div class="donate-desc">一次绝育手术</div>
+                </div>
+                <div class="donate-option" onclick="selectAmount(500, this)">
+                    <div class="donate-amount">¥500</div>
+                    <div class="donate-desc">一次紧急手术</div>
+                </div>
+                <div class="donate-option" onclick="selectAmount(0, this)">
+                    <div class="donate-amount">其他</div>
+                    <div class="donate-desc">自定义金额</div>
+                </div>
+            </div>
+
+            <!-- 自定义金额输入 -->
+            <div id="customAmount" style="display: none; margin: 20px 0;">
+                <input type="number" placeholder="请输入金额" style="padding: 12px 20px; border: 2px solid #e0e0e0; border-radius: 8px; width: 200px; font-size: 18px; text-align: center;">
+            </div>
+
+            <!-- 捐款按钮 -->
+            <div style="margin-top: 30px;">
+                <button class="btn btn-primary btn-large" onclick="alert('捐款功能开发中...\n\n目前可通过以下方式捐款：\n1. 支付宝：animalrescue@xxx.org\n2. 微信：扫描下方二维码\n3. 银行转账：详见联系我们')">
+                    💳 立即捐款
+                </button>
+            </div>
+
+            <!-- 支付方式 -->
+            <div style="margin-top: 30px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <div style="width: 120px; height: 120px; background: #f0f0f0; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;">
+                        <span style="color: #999;">支付宝二维码</span>
+                    </div>
+                    <span style="color: #666; font-size: 14px;">支付宝</span>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 120px; height: 120px; background: #f0f0f0; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;">
+                        <span style="color: #999;">微信二维码</span>
+                    </div>
+                    <span style="color: #666; font-size: 14px;">微信支付</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 物资捐赠 -->
+        <div style="background: white; padding: 30px; border-radius: 15px; margin-bottom: 40px;">
+            <h2 style="color: #333; margin-bottom: 20px; text-align: center;">📦 物资捐赠</h2>
+            <p style="color: #666; text-align: center; margin-bottom: 30px;">
+                除了资金，我们也非常需要以下物资支持
+            </p>
+
+            <div class="card-grid">
+                <div class="card" style="padding: 25px;">
+                    <div style="font-size: 40px; margin-bottom: 15px;">🍖</div>
+                    <h3 style="margin-bottom: 10px;">主粮</h3>
+                    <p style="color: #666; font-size: 14px; line-height: 1.8;">
+                        猫粮、狗粮（成年/幼年均可）<br>
+                        品牌不限，保质期6个月以上
+                    </p>
+                    <span class="card-tag tag-urgent" style="margin-top: 15px;">急需</span>
+                </div>
+
+                <div class="card" style="padding: 25px;">
+                    <div style="font-size: 40px; margin-bottom: 15px;">💊</div>
+                    <h3 style="margin-bottom: 10px;">医疗用品</h3>
+                    <p style="color: #666; font-size: 14px; line-height: 1.8;">
+                        碘伏、纱布、绷带<br>
+                        驱虫药、抗生素等
+                    </p>
+                    <span class="card-tag tag-urgent" style="margin-top: 15px;">急需</span>
+                </div>
+
+                <div class="card" style="padding: 25px;">
+                    <div style="font-size: 40px; margin-bottom: 15px;">🧹</div>
+                    <h3 style="margin-bottom: 10px;">清洁用品</h3>
+                    <p style="color: #666; font-size: 14px; line-height: 1.8;">
+                        消毒液、洗衣液<br>
+                        垃圾袋、纸巾等
+                    </p>
+                    <span class="card-tag tag-normal" style="margin-top: 15px;">需要</span>
+                </div>
+
+                <div class="card" style="padding: 25px;">
+                    <div style="font-size: 40px; margin-bottom: 15px;">🏠</div>
+                    <h3 style="margin-bottom: 10px;">生活用品</h3>
+                    <p style="color: #666; font-size: 14px; line-height: 1.8;">
+                        猫砂、尿垫<br>
+                        食盆、水盆、窝垫等
+                    </p>
+                    <span class="card-tag tag-normal" style="margin-top: 15px;">需要</span>
+                </div>
+            </div>
+
+            <!-- 捐赠方式 -->
+            <div style="background: #f5f5f5; padding: 25px; border-radius: 10px; margin-top: 30px;">
+                <h3 style="color: #333; margin-bottom: 15px;">📍 物资捐赠方式</h3>
+                <ul style="color: #666; line-height: 2.2;">
+                    <li><strong>直接送达：</strong>XX市XX区XX路XX号 流浪动物救助基地（9:00-18:00）</li>
+                    <li><strong>快递邮寄：</strong>收件人：救助站 电话：400-XXX-XXXX 地址：同上</li>
+                    <li><strong>上门收取：</strong>大量物资可联系安排上门收取（限本市）</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 捐赠公示 -->
+        <div style="background: white; padding: 30px; border-radius: 15px;">
+            <h2 style="color: #333; margin-bottom: 20px; text-align: center;">📋 捐赠公示（最近）</h2>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr style="background: #f5f5f5;">
+                            <th style="padding: 12px; text-align: left; color: #333;">日期</th>
+                            <th style="padding: 12px; text-align: left; color: #333;">捐赠人</th>
+                            <th style="padding: 12px; text-align: left; color: #333;">类型</th>
+                            <th style="padding: 12px; text-align: left; color: #333;">金额/物品</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 12px; color: #666;">2026-03-19</td>
+                            <td style="padding: 12px; color: #666;">匿名爱心人士</td>
+                            <td style="padding: 12px;"><span class="card-tag tag-success">资金</span></td>
+                            <td style="padding: 12px; color: #666;">¥1,000</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 12px; color: #666;">2026-03-18</td>
+                            <td style="padding: 12px; color: #666;">王女士</td>
+                            <td style="padding: 12px;"><span class="card-tag tag-normal">物资</span></td>
+                            <td style="padding: 12px; color: #666;">猫粮 20kg</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 12px; color: #666;">2026-03-17</td>
+                            <td style="padding: 12px; color: #666;">李先生</td>
+                            <td style="padding: 12px;"><span class="card-tag tag-success">资金</span></td>
+                            <td style="padding: 12px; color: #666;">¥500</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 12px; color: #666;">2026-03-16</td>
+                            <td style="padding: 12px; color: #666;">某宠物医院</td>
+                            <td style="padding: 12px;"><span class="card-tag tag-normal">物资</span></td>
+                            <td style="padding: 12px; color: #666;">医疗用品一批</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="text-align: center; color: #999; font-size: 14px; margin-top: 20px;">
+                完整公示表请访问我们的官方博客或公众号
+            </p>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🐾 流浪动物救助中心</h3>
+                <p>致力于流浪动物救助、领养推广、公益宣传</p>
+            </div>
+            <div class="footer-section">
+                <h3>联系我们</h3>
+                <p>📞 电话：400-XXX-XXXX</p>
+                <p>📧 邮箱：help@animalrescue.org</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 流浪动物救助中心</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
