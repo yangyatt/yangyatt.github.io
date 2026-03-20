@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    >我的个人主页</标题>
+    <样式>
+正文 {
+字体族：'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+            颜色: #333;
+            最大宽度: 800像素;
+            边距: 0 自动;
+            内边距: 20像素;
+背景颜色：#f9f9f9;
+        }
+        .容器 {
+            背景: 白色;
+            填充: 40像素;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            颜色: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            下内边距: 10像素;
+        }
+        .可编辑 {
+            边框: 1像素 虚线 透明;
+            内边距: 2像素;
+            过渡: 所有 0.3秒;
+        }
+        .editable:hover {
+            边框颜色: #3498db;
+            背景颜色: #f0f8ff;
+            光标: 文本;
+        }
+        .editable:focus {
+            轮廓: 无;
+            边框颜色: #2ecc71;
+            背景颜色: #fff;
+        }
+        .提示 {
+            背景颜色: #e8f4fd;
+            border-left: 4px solid #3498db;
+            内边距: 15像素;
+            margin-top: 20px;
+            font-size: 0.9em;
+            颜色: #555;
+        }
+        图片 {
+            最大宽度: 100%;
+            高度: 自动;
+圆角半径：5像素；
+
+        }
+页脚 {
+            文本对齐: 居中;
+上边距：40像素；
+字体大小：0.8em；
+            颜色: #888;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 标题区域 -->
+    <h1 class="editable" contenteditable="true">你好，这是我的个人主页！</h1>
+    
+    <!-- 内容区域 -->
+    <p class="editable" contenteditable="true">
+        双击这里的文字可以直接修改内容。不需要懂代码，不需要服务器，不需要备案。
+        这是一个完全免费、永久在线的网页。
+    </p>
+
+    <p class="editable" contenteditable="true">
+        你可以介绍自己，分享照片，或者写日记。
+        试着双击这段文字，把它改成你想说的话吧！
+    </p>
+
+    <!-- 图片示例区域 (你可以替换 src 里的链接) -->
+    <div class="editable" contenteditable="true">
+        <p><strong>这里可以放图片：</strong></p>
+        <!-- 这是一个示例图片，你可以把 src 里的链接换成你自己的图片链接 -->
+        <img src="https://images.unsplash.com/photo-1499750310159-52f0f83ad713?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="示例图片">
+    </div>
+
+    <!-- 提示区域 -->
+    <div class="tip">
+        
+        1. 在网页上直接<b>双击文字</b>即可修改。<br>
+        2. 修改完后，按键盘上的 <b>Enter (回车)</b> 键保存。<br>
+        3. 如果想加图片，去 <a href="https://imgur.com/upload" target="_blank">Imgur</a> 上传图片，复制链接，然后在这里输入 <code>&lt;img src="你的链接"&gt;</code>。
+    </div>
+
+    <footer>
+        <p class="editable" contenteditable="true">© 2026 我的个人主页 - 由 GitHub Pages 驱动</p>
+    </footer>
+</div>
+
+<script>
+    // 简单的脚本：监听回车键，模拟保存效果（实际保存需要点击 GitHub 的 Commit 按钮，
+    // 但为了让你感觉像是在编辑，这里做一个视觉反馈）
+    document.querySelectorAll('.editable').forEach(el => {
+        el.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                this.blur(); // 失去焦点，表示编辑完成
+                (
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
